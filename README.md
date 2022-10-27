@@ -29,20 +29,45 @@ Em outras palavras uma entidade deve ter apenas uma razão de existir. Assim ser
 
 #### Vantages: ####
 
+* Motivo único de alteração da entidade
 * Reaproveitamento de código
 * Fácil refatoração
 * Testes unitários com implementação facilitada
 * Isolamento de _bugs_ e agilidade de atuação nos mesmos
 * Melhor entendimento do código por outros analistas/desenvolvedores
-* Motivo único de alteração da entidade
+
 
 #### Dica: ####
 
 Se houver dificuldade para nomear uma entidade, com um nome **totalmente descritivo** e ao mesmo tempo curto/breve. É um indício de que a entidade tem mais do que uma responsabilidade.
 
 
+## Open/Closed Principle ::: Princípio Aberto e Fechado
+
+> O ***OCP*** dita que uma entidade está aberta para extensão e fechada para modificação.
+
+De modo simples, a entidade está ***fechada*** para ser alterada. Muitas vezes, alguns programadores se vêem motivados a **modificar** uma entidade e colocar um "_if_" para resolver uma nova situação nova que surja. Justificando que é apenas uma condição, mas esquecendo que qualquer que seja a outra entidade que possa herdar desta também será afetada e ainda mais, não levando em conta que em futuro breve ou não outras condicionais poderão surgir, fazendo com que o código fique poluído e difícil de ser entendido e dada a devida manutenção.  
+E ela está **aberta** para ser extendida, quando outras entidades podem usá-la por herança e adicionar novas funcionalidades.
+
+#### Vantages: ####
+
+* Redução de complexidade ciclomáticas* e elimando cláusulas condicionais
+* Reaproveitamento de código, por extender uma entidade filha ao invés de modificar a entidade pai
+* Fácil refatoração
+* Testes unitários com implementação facilitada
+* Isolamento de _bugs_ e agilidade de atuação nos mesmos
+* Melhor entendimento do código por outros analistas/desenvolvedores
+
+#### Dica: ####
+
+Se o código possui _"Ifs"_ com a intenção de validar todas as possibilidades externas que surgiram e/ou devido uma nova situação, não prevista no escopo do projeto, você deseja adicionar uma condição ao código é um alerta de que a OCP deve ser olhado com carinho.
+
+
 ## Glossário ##
 
+* __Complexidade ciclomática__ - é uma métrica do campo da engenharia de software, desenvolvida por Thomas J. McCabe em 1976, e serve para mensurar a complexidade de uma determinada entidade, a partir da contagem do número de caminhos independentes que ele pode executar até o seu fim.
 * __Entidade__ - classes, módulos, funções, componentes, bibliotecas ou qualquer outra unidade sujeita a alterações no software.
 * __Glossário__ - dicionário de palavras de sentido obscuro ou pouco conhecido; elucidário.
 * __Princípio__ - modelo, base. Contrário de lei não é obrigatório. Pode-se dizer que trata-se de boas práticas.
+
+
