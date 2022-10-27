@@ -66,6 +66,14 @@ Mudar é sempre um risco, extender é garantir que o que estava implementado con
 
 Se o código possui _"Ifs"_ com a intenção de validar todas as possibilidades externas que surgiram e/ou devido uma nova situação, não prevista no escopo do projeto, você deseja adicionar uma condição ao código é um alerta de que a OCP deve ser olhado com carinho.
 
+## Links Úteis / Referências ##
+
+Filipe Deschamps - SOLID - https://www.youtube.com/watch?v=6SfrO3D4dHM  
+Código Fonte TV - SOLID - https://www.youtube.com/watch?v=mkx0CdWiPRA  
+Igor Luna - SOLID C# - https://github.com/igorluna/solid-workshop  
+André Celestino - OCP - https://www.andrecelestino.com/solid-open-closed-principle-ocp/  
+
+
 
 ## Glossário ##
 
