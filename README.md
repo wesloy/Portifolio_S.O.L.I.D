@@ -5,7 +5,7 @@
 
 Este projeto tem como intuito aplicar os princípios SOLID utilizando C#, transformando conceitos em algo mais concretos. Este projeto também será um guia para projetos futuros.
 
-Observação: toda palavra seguida de asterisco, possui uma breve descrição na penúltima sessão deste _Redme_, sessão _Glossário_, com o objetivo de elucidar qualquer dúvida sobre a utilização desta palavra no contexto deste "manuscrito".  
+**Observação**: toda palavra seguida de asterisco, possui uma breve descrição na penúltima sessão deste _Redme_, sessão _Glossário_, com o objetivo de elucidar qualquer dúvida sobre a utilização desta palavra no contexto deste "manuscrito".  
 Exemplo: Glossário*
 
 
@@ -43,6 +43,6 @@ Se houver dificuldade para nomear uma entidade, com um nome **totalmente descrit
 
 ## Glossário ##
 
-* Entidade - classes, módulos, funções, componentes, bibliotecas ou qualquer outra unidade sujeita a alterações no software.
-* Glossário - dicionário de palavras de sentido obscuro ou pouco conhecido; elucidário.
-* Princípio - modelo, base. Contrário de lei não é obrigatório. Pode-se dizer que trata-se de boas práticas.
+* __Entidade__ - classes, módulos, funções, componentes, bibliotecas ou qualquer outra unidade sujeita a alterações no software.
+* __Glossário__ - dicionário de palavras de sentido obscuro ou pouco conhecido; elucidário.
+* __Princípio__ - modelo, base. Contrário de lei não é obrigatório. Pode-se dizer que trata-se de boas práticas.
