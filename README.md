@@ -18,6 +18,8 @@ Esse termo é um acrônimo:
 * **D**ependency Inversion (Princípio da Inversão de Depdência)
 
 SOLID **não é um Desgner Patterns** é na verdade um conjunto de princípios* que tem como objetivo a construção de sistemas mais compreensivos, flexíveis e sustentáveis.  
+
+
 O que será facilmente identificado ao se ler este artigo é que os princípios SOLID são inter-relacionados e diretamente dependentes um do outro, em alguns casos são sutís diferenças que devem ser observadas para conseguir visualizar o princípio que você está buscanco analisar. Em sintese, uma excelente aplicação do SOLID em seu código fará com que 2, 3 ou até mais princípios estejam presentes em apenas uma entidade*. 
 
 
