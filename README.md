@@ -80,7 +80,7 @@ O LSP, tem foco nas abstrações e para que seu princípio seja obedecido, refat
 
 #### Vantages: ####
 
-* Atinge o nível correto e necessário de abstração
+* Provoca o nível correto e necessário de abstração
 * Reaproveitamento de código, por extender uma entidade filha ao invés de modificar a entidade pai (Implanta OCP)
 * Fácil refatoração
 * Testes unitários com implementação facilitada
@@ -89,7 +89,7 @@ O LSP, tem foco nas abstrações e para que seu princípio seja obedecido, refat
 
 #### Dica: ####
 
-Se o código possui _"Ifs"_ com a intenção de validar todas as variáveis externas que surgiram é um alerta de que a LSP deve ser olhado com carinho. A diferença existente entre o LSP e OCP é que o LSP foca exclusivamente na abstração.
+Se o código possui _"Ifs"_ com a intenção de validar todas as variáveis externas que surgiram é um alerta de que a LSP deve ser olhado com carinho. Quanto a essa dica a diferença existente entre o LSP e OCP é que o LSP foca exclusivamente na abstração.
 
 ## Links Úteis / Referências ##
 
