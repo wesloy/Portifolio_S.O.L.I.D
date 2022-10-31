@@ -15,7 +15,7 @@ Esse termo é um acrônimo:
 * **O**pen/Closed Principle (Princípio Aberto e Fechado)
 * **L**iskov Substitution Principle (Princípio de Substituíção de Liskov)
 * **I**nterface Segregation Principle (Princípio de Segregação de Interface*)
-* **D**ependency Inversion (Princípio da Inversão de Depdência)
+* **D**ependency Inversion Principle (Princípio da Inversão de Depdência)
 
 SOLID **não é um Desgner Patterns** é na verdade um conjunto de princípios* que tem como objetivo a construção de sistemas mais compreensivos, flexíveis e sustentáveis.  
 
@@ -112,6 +112,27 @@ O ISP é a aplicação dos princípios SRP, OCP e LSP, direcionandos para interf
 Se um cliente precisar "passar por alto" algum método da interface e/ou a atualização da interface* provoque este mesmo efeito em outras classes que já estão implementadas é sinal de que o ISP está sendo infligido.  
 **Observação:** alterar uma interface, para incluir um novo método é extremamente perigoso, visto que pode quebrar o software de diversas formas diferentes. Isto apenas se deve ser feito no caso específico de que todas as implementações necessitem deste novo método.
 
+## Dependency Inversion Principle ::: Princípio da Inversão de Depdência ##
+> **DIP** determina que módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações e abstrações não devem depender de detalhes. Detalhes devem depender de abstrações.  
+
+
+O DIP em poucas palavras diz "Dependa de uma abstração e não de uma implementação".  
+Olhando para as vantagens descritas abaixo, nota-se que o DIP é, por assim dizer, o mais importante de todos os princípios. Já que sua aplicação depende que todos os outros princípios sejam bem trabalhados.
+
+#### Exemplo: ####
+
+#### Vantages: ####
+
+* Ao declarar abstrações e criar implementações específicas a partir delas, satisfazemos o SRP;
+* Trabalhar com variáveis do tipo de Interfaces e instanciar tipos concretos em tempo de execução nos remete ao propósito do OCP;
+* Abstrações favorecem a modelagem correta de classes e subclasses, cumprindo o LSP;
+* A inversão de dependência promove a segregação de Interfaces, representada pelo ISP, já que novas estruturas de alto nível são elaboradas.
+
+#### Dica: ####
+
+Se um método recebe como parâmetro um objeto concreto ou dentro de uma classe é necessário instanciar (inicializar um objeto) é um forte indicador de que o DIP está quebrado em sua aplicação.  
+
+
 ## Links Úteis / Referências ##
 
 Filipe Deschamps - SOLID - https://www.youtube.com/watch?v=6SfrO3D4dHM  
@@ -119,6 +140,7 @@ Código Fonte TV - SOLID - https://www.youtube.com/watch?v=mkx0CdWiPRA
 Igor Luna - SOLID C# - https://github.com/igorluna/solid-workshop  
 André Celestino - OCP - https://www.andrecelestino.com/solid-open-closed-principle-ocp/  
 André Celestino - LSP - https://www.andrecelestino.com/solid-liskov-substitution-principle-lsp/  
+André Celestino - DIP - https://www.andrecelestino.com/solid-dependency-inversion-principle-dip/  
 
 
 
