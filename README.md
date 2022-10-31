@@ -14,7 +14,7 @@ Esse termo é um acrônimo:
 * **S**ingle Responsibility Principle (Princípio de Responsabilidade Única)
 * **O**pen/Closed Principle (Princípio Aberto e Fechado)
 * **L**iskov Substitution Principle (Princípio de Substituíção de Liskov)
-* **I**nterface Segregation Principle (Princípio de Segregação de Interface)
+* **I**nterface Segregation Principle (Princípio de Segregação de Interface*)
 * **D**ependency Inversion (Princípio da Inversão de Depdência)
 
 SOLID **não é um Desgner Patterns** é na verdade um conjunto de princípios* que tem como objetivo a construção de sistemas mais compreensivos, flexíveis e sustentáveis.  
@@ -36,7 +36,7 @@ Em outras palavras uma entidade deve ter apenas uma razão de existir. Assim ser
 * Motivo único de alteração da entidade
 * Reaproveitamento de código
 * Fácil refatoração
-* Testes unitários com implementação facilitada
+* Testes unitários com implementação* facilitada
 * Isolamento de _bugs_ e agilidade de atuação nos mesmos
 * Melhor entendimento do código por outros analistas/desenvolvedores
 
@@ -91,20 +91,45 @@ O LSP, tem foco nas abstrações e para que seu princípio seja obedecido, refat
 
 Se o código possui _"Ifs"_ com a intenção de validar todas as variáveis externas que surgiram é um alerta de que a LSP deve ser olhado com carinho. Quanto a essa dica a diferença existente entre o LSP e OCP é que o LSP foca exclusivamente na abstração.
 
+## Interface Segregation Principle ::: Princípio de Segregação de Interface ##
+> **ISP** tem como princípio que os clientes* que implementam uma interface **não devem** ser obrigados a implementar uma ação/método que não utiliza.
+
+O ISP é a aplicação dos princípios SRP, OCP e LSP, direcionandos para interfaces.
+
+#### Exemplo: ####
+
+#### Vantages: ####
+
+* Provoca o nível correto e necessário de abstração na interface
+* Reaproveitamento de código, por se criar interfaces mais específicas do que genéricas, lembrando que uma classe que implementa pode, se necessário, implementar várias interfaces.
+* Fácil refatoração
+* Testes unitários com implementação facilitada
+* Isolamento de _bugs_ e agilidade de atuação nos mesmos
+* Melhor entendimento do código por outros analistas/desenvolvedores
+
+#### Dica: ####
+
+Se um cliente precisar "passar por alto" algum método da interface e/ou a atualização da interface* provoque este mesmo efeito em outras classes que já estão implementadas é sinal de que o ISP está sendo infligido.  
+**Observação:** alterar uma interface, para incluir um novo método é extremamente perigoso, visto que pode quebrar o software de diversas formas diferentes. Isto apenas se deve ser feito no caso específico de que todas as implementações necessitem deste novo método.
+
 ## Links Úteis / Referências ##
 
 Filipe Deschamps - SOLID - https://www.youtube.com/watch?v=6SfrO3D4dHM  
 Código Fonte TV - SOLID - https://www.youtube.com/watch?v=mkx0CdWiPRA  
 Igor Luna - SOLID C# - https://github.com/igorluna/solid-workshop  
 André Celestino - OCP - https://www.andrecelestino.com/solid-open-closed-principle-ocp/  
+André Celestino - LSP - https://www.andrecelestino.com/solid-liskov-substitution-principle-lsp/  
 
 
 
 ## Glossário ##
 
+* __Cliente__ - nesse artigo refere-se a entidades que implementam uma abstração ou interface.
 * __Complexidade ciclomática__ - é uma métrica do campo da engenharia de software, desenvolvida por Thomas J. McCabe em 1976, e serve para mensurar a complexidade de uma determinada entidade, a partir da contagem do número de caminhos independentes que ele pode executar até o seu fim.
 * __Entidade__ - classes, módulos, funções, componentes, bibliotecas ou qualquer outra unidade sujeita a alterações no software.
-* __Glossário__ - dicionário de palavras de sentido obscuro ou pouco conhecido; elucidário.
+* __Glossário__ - dicionário de palavras de sentido obscuro ou pouco conhecido; elucidário.  
+* __Implementação__ - códificação que transcreve em linguagem de programação a regra de negócio ou cálculo que se espera obter.
+* __Interface__ - determina um contrato ou os métodos que se deve implementar quando a mesma (interface) é herdada, ou seja, é uma forma de _template_ ou identidiade.
 * __Princípio__ - modelo, base. Contrário de lei não é obrigatório. Pode-se dizer que trata-se de boas práticas.
 
 
