@@ -30,28 +30,42 @@ O que será facilmente identificado ao se ler este artigo é que os princípios 
 Em outras palavras uma entidade deve ter apenas uma razão de existir. Assim será evidata as "_God Class_", onde uma única classe realiza diversos processos diferentes. Utilizar este princípio será base para todos os demais do SOLID.
 
 #### Exemplo: ####
+```C#
+public class Funcionario
+{    
+    void PrepararAlimentos();
+    void Cozinhar();
+    void MontarPrato();
+    void AnotarPedido();
+    void ServirMesa();  
+    void FinalizarConta();
+    void ReceberPagamento();
+}
+```  
+
+Até aqui no exemplo temos uma classe que realiza todas as funções fundamentais existentes em uma lanchonete. Continuar com o código assim irá gerar muitas "gambiarras", em manutenções e dificultará a análise para correções de _bugs_.
 
 ```C#
-
-public interface IFuncionario
-{
-    void BaterPonto();    
-}
-
-public interface ICozinheiro
+public class Cozinheiro
 {
     void PrepararAlimentos();
     void Cozinhar();
     void MontarPrato();
 }
 
-public interface IGarcom
+public class Garcom
 {
     void AnotarPedido();
     void ServirMesa();    
 }
+
+public class Caixa
+{
+    void FinalizarConta();
+    void ReceberPagamento();
+}
 ```  
-Neste exemplo, observamos interfaces bem segregadas com os métodos específicos a cada função dentro de um restaurante. Infelizmente é comum ver em alguns programas uma única classe que gere todas as funções (_God Class_). Como notará ainda neste artigo, se for necessário a implementação* poderá herdar mais de uma dessas interfaces.
+Agora, observamos classes bem segregadas com os métodos específicos. Refatorando a _God Class_ temos um código mais compreensivo, isolado e de fácil identificação de _bugs_ e rápida solução dos mesmos.
 
 #### Vantages: ####
 
@@ -117,11 +131,69 @@ Se o código possui _"Ifs"_ com a intenção de validar todas as variáveis exte
 
 
 ## Liskov Substitution Principle ::: Princípio de Substituíção de Liskov ##
-> **LSP** prega que uma entidade base deve poder ser substituída por uma entidade derivada, sem prejuízo para o software e que as entidades derivadas nunca devem infligir as definições/comportamentos da entidade base. 
+> **LSP** prega que uma entidade base poderá ser substituída por uma entidade derivada, sem prejuízo para o software e que as entidades derivadas nunca devem infligir as definições/comportamentos da entidade base. 
 
-O LSP, tem foco nas abstrações e para que seu princípio seja obedecido, refatora-se a abstração base para um nível que realmente possa atender de forma genérica, sem obrigar que as entidades derivadas façam testes lógicos ("_Ifs_") para evitar exceções.
+O LSP, tem foco nas abstrações e para que seu princípio seja obedecido, refatora-se a abstração base para um nível que realmente possa atender de forma genérica, sem obrigar que as entidades derivadas façam testes lógicos ("_Ifs_") para evitar exceções. Em outras palavras, nos fornece uma forma de saber se uma herança está implementada de forma correta ou não. Através do uso de polimorfismo, ao usar um método ou propriedade, seja da classe base ou da classe especialista, o resultado sempre deve estar correto sem qualquer alteração.
 
 #### Exemplo: ####
+
+```c#
+public class Integrador
+{
+    public void EnviaEmail(string conteudo)
+    {
+        // Obtem o conteudo...
+        // Envia para alguem
+    }
+}
+
+public class Sistema
+{
+    public void Integra()
+    {
+        Integrador integrador = new Integrador();
+        integrador.EnviaEmail("Conteudo!");
+    }
+}
+```
+
+Caso precisemos adicionar uma integração via API, vamos precisar adicionar mais um metodo no nosso integrador e provavelmente um if no nosso metodo Sistema.Integra(). Alem disso a nossa classe Sistema precisa "entender" que tipo de integração ele vai fazer(API ou Email).
+
+Para evitar isso, podemos, mais uma vez, usar interfaces!
+
+
+```c#
+public interface IIntegrador
+{
+    void Envia(string conteudo);
+}
+
+public class IntegradorEmail : IIntegrador
+{
+    public void Envia(string conteudo)
+    {
+        // Faz lógica de EMAIL
+    }
+}
+
+public class IntegradorAPI : IIntegrador
+{
+    public void Envia(string conteudo)
+    {
+        // Faz a lógica de API
+    }
+}
+
+public class Sistema
+{
+    public void Integra(IIntegrador integrador)
+    {
+        integrador.Envia("Conteudo!");
+    }
+}
+```  
+
+Agora o Sistema não precisa saber se o envio do e-mail é por meio de uma API, SMTP ou qualquer outra tecnologia.
 
 #### Vantages: ####
 
@@ -183,8 +255,10 @@ Se um método recebe como parâmetro um objeto concreto ou dentro de uma classe 
 Filipe Deschamps - SOLID - https://www.youtube.com/watch?v=6SfrO3D4dHM  
 Código Fonte TV - SOLID - https://www.youtube.com/watch?v=mkx0CdWiPRA  
 Igor Luna - SOLID C# - https://github.com/igorluna/solid-workshop  
+Macoratti - SRP - https://www.macoratti.net/08/06/net_srp1.htm  
 André Celestino - OCP - https://www.andrecelestino.com/solid-open-closed-principle-ocp/  
 André Celestino - LSP - https://www.andrecelestino.com/solid-liskov-substitution-principle-lsp/  
+Medium NetCoders - LSP - https://medium.com/netcoders/aplicando-solid-com-c-lsp-liskov-substitution-principle-2a5d23753506
 André Celestino - DIP - https://www.andrecelestino.com/solid-dependency-inversion-principle-dip/  
 
 
