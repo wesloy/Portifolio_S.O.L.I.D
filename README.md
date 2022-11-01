@@ -57,6 +57,29 @@ Mudar é sempre um risco, extender é garantir que o que estava implementado con
 
 #### Exemplo: ####
 
+```C#
+public interface IAutomovel 
+{
+    void Move();
+    void Buzina();
+}
+
+public class Entregador
+{
+    public void Dirigir(IAutomovel automovel)
+    {
+        automovel.Move();
+    }
+    
+    public void AvisarChegada(IAutomovel automovel)
+    {
+        automovel.Buzina();
+    }
+
+}
+```  
+Neste exemplo o entregador não está limitado a um tipo de veículo, bem como a interface IAutomovel pode ser usada como extensão para diversos outros cenários, como: carros específicos e/ou outros tipos de condutores (piloto, motorista de ônibus, motociclista, etc).
+
 #### Vantages: ####
 
 * Redução de complexidade ciclomáticas* e elimando cláusulas condicionais
