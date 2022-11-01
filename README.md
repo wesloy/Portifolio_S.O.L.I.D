@@ -215,6 +215,96 @@ O ISP é a aplicação dos princípios SRP, OCP e LSP, direcionandos para interf
 
 #### Exemplo: ####
 
+```c#
+public interface IVeiculo
+{
+    void Abastecer(string combustivel);
+    void FecharPortas();
+    void LevantarTripe();
+    void Mover();    
+    void Estacionar(); 
+}
+
+public class Carro : IVeiculo
+{
+    public void Abastecer(string combustivel) { }
+
+    public void FecharPortas() { }
+
+    public void LevantarTripe()
+    {
+        throw new System.Exception("Não tem tripé!");
+    }
+    
+     public void Mover() { }
+     
+     public void Estacionar() { }
+
+}
+
+public class Moto : IVeiculo
+{
+    public void Abastecer(string combustivel) { }
+
+    public void FecharPortas()
+    {
+        throw new System.Exception("Não tem portas!");
+    }
+    
+    public void LevantarTripe() { }
+    
+    public void Mover() { }
+     
+    public void Estacionar() { }
+}
+```
+
+Até o presente momento, conseguimos notar que tanto a classe Carro, como a classe Moto foram obrigados a implementar métodos que não podem executar.  
+Uma das abordagens corretas deveria ser, conforme abaixo.
+
+```c#
+public interface IVeiculo
+{
+    void Abastecer(string combustivel);
+    void Mover();    
+    void Estacionar(); 
+}
+
+public interface ICarro
+{
+    void FecharPortas();
+}
+
+public interface IMoto
+{
+    void LevantarTripe();
+}
+
+public class Carro : IVeiculo, ICarro
+{
+    public void Abastecer(string combustivel) { }    
+    
+    public void Mover() { }
+     
+    public void Estacionar() { }
+     
+    public void FecharPortas() { }
+}
+
+public class Carro : IVeiculo, IMoto
+{
+    public void Abastecer(string combustivel) { }    
+    
+    public void Mover() { }
+     
+    public void Estacionar() { }
+     
+    public void LevantarTripe() { }
+}
+```  
+
+Agora chegamos ao nível correto de segregação das interfaces e desobrigamos a implementação a tratar com excessões ações que a interface exigia dela e a implementação como cliente não poderia executar.
+
 #### Vantages: ####
 
 * Provoca o nível correto e necessário de abstração na interface
@@ -258,7 +348,7 @@ Igor Luna - SOLID C# - https://github.com/igorluna/solid-workshop
 Macoratti - SRP - https://www.macoratti.net/08/06/net_srp1.htm  
 André Celestino - OCP - https://www.andrecelestino.com/solid-open-closed-principle-ocp/  
 André Celestino - LSP - https://www.andrecelestino.com/solid-liskov-substitution-principle-lsp/  
-Medium NetCoders - LSP - https://medium.com/netcoders/aplicando-solid-com-c-lsp-liskov-substitution-principle-2a5d23753506
+Medium NetCoders - LSP - https://medium.com/netcoders/aplicando-solid-com-c-lsp-liskov-substitution-principle-2a5d23753506  
 André Celestino - DIP - https://www.andrecelestino.com/solid-dependency-inversion-principle-dip/  
 
 
