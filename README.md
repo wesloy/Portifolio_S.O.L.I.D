@@ -31,12 +31,34 @@ Em outras palavras uma entidade deve ter apenas uma razão de existir. Assim ser
 
 #### Exemplo: ####
 
+```C#
+
+public interface IFuncionario
+{
+    void BaterPonto();    
+}
+
+public interface ICozinheiro
+{
+    void PrepararAlimentos();
+    void Cozinhar();
+    void MontarPrato();
+}
+
+public interface IGarcom
+{
+    void AnotarPedido();
+    void ServirMesa();    
+}
+```  
+Neste exemplo, observamos interfaces bem segregadas com os métodos específicos a cada função dentro de um restaurante. Infelizmente é comum ver em alguns programas uma única classe que gere todas as funções (_God Class_). Como notará ainda neste artigo, se for necessário a implementação* poderá herdar mais de uma dessas interfaces.
+
 #### Vantages: ####
 
 * Motivo único de alteração da entidade
 * Reaproveitamento de código
 * Fácil refatoração
-* Testes unitários com implementação* facilitada
+* Testes unitários com implementação facilitada
 * Isolamento de _bugs_ e agilidade de atuação nos mesmos
 * Melhor entendimento do código por outros analistas/desenvolvedores
 
