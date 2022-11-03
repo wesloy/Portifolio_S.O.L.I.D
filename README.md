@@ -433,6 +433,9 @@ Lambda3 - DIP - https://www.lambda3.com.br/2022/07/principios-solid-boas-pratica
 
 ## Autor ##
 
-Wesley Eloy
+> Wesley Eloy  
+
+
+![Linkdin](https://github.com/wesloy/Portifolio_S.O.L.I.D/blob/main/lnk.png)  
 https://www.linkedin.com/in/wesley-eloy/
 
