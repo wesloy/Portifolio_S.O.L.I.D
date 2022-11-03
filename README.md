@@ -425,7 +425,8 @@ André Celestino - DIP - https://www.andrecelestino.com/solid-dependency-inversi
 * __Entidade__ - classes, módulos, funções, componentes, bibliotecas ou qualquer outra unidade sujeita a alterações no software.
 * __Glossário__ - dicionário de palavras de sentido obscuro ou pouco conhecido; elucidário.  
 * __Implementação__ - códificação que transcreve em linguagem de programação a regra de negócio ou cálculo que se espera obter.
-* __Interface__ - determina um contrato ou os métodos que se deve implementar quando a mesma (interface) é herdada, ou seja, é uma forma de _template_ ou identidiade.  * __Instanciar__ - iniciliar um objeto, em C# acontece com a palavra reservada _New_.
+* __Interface__ - determina um contrato ou os métodos que se deve implementar quando a mesma (interface) é herdada, ou seja, é uma forma de _template_ ou identidiade. 
+* __Instanciar__ - iniciliar um objeto, em C# acontece com a palavra reservada _New_.
 * __Princípio__ - modelo, base. Contrário de lei não é obrigatório. Pode-se dizer que trata-se de boas práticas.
 
 
