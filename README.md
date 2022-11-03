@@ -324,9 +324,74 @@ Se um cliente precisar "passar por alto" algum método da interface e/ou a atual
 
 
 O DIP em poucas palavras diz "Dependa de uma abstração e não de uma implementação".  
-Olhando para as vantagens descritas abaixo, nota-se que o DIP é, por assim dizer, o mais importante de todos os princípios. Já que sua aplicação depende que todos os outros princípios sejam bem trabalhados.
+Olhando para as vantagens descritas abaixo, nota-se que o DIP é, por assim dizer, o mais importante de todos os princípios. Já que sua aplicação depende que todos os outros princípios sejam bem trabalhados.  
+Isso gera um ganho enorme para desacoplamento entre as classes, uma vez que, se o comportamento de uma mudar, a outra não sofrerá impacto já que depende somente da abstração.
 
 #### Exemplo: ####
+
+```c#
+public class Cadastro 
+{
+    public List<Cliente> ObterClientes()
+    {
+        // New é uma indicação da quebra do DIP
+        ClientesDataBase database = new ClientesDataBase();
+        return database.ObterClientes();
+    }
+
+    public void AdicionarCliente(Cliente novoCliente)
+    {
+        ClientesDataBase database = new ClientesDataBase();
+        
+        // Uso de classes estáticas é uma indicação da quebra do DIP
+        novoCliente.DataCadastro = DateTime.Now;
+        database.Salvar(novoCliente);
+    }
+}
+```
+
+Agora veja com DIP usado corretamente:
+
+
+```c#
+public class Cadastro 
+{
+    IDateTimeProvider _dateTimeProvider;
+    IClientesDataBase _cienteDataBase;
+
+    public Cadastro(
+        IDateTimeProvider dateTimeProvider,
+        IClientesDataBase ClienteDataBase)
+    {
+        _dateTimeProvider = dateTimeProvider;
+        _cienteDataBase = ClienteDataBase;
+    }
+
+    public List<Cliente> ObterClientes()
+    {
+        return _cienteDataBase.ObtemClientes();
+    }
+
+    public void AdicionarCliente(Cliente novoCliente)
+    {
+        novoCliente.DataCadastro = _dateTimeProvider.Now;
+        _cienteDataBase.Salvar(novoCliente);
+    }
+}
+
+public interface IDateTimeProvider
+{
+    DateTime Now { get; }
+}
+
+public interface IClientesDataBase
+{
+    List<Cliente> ObtemClientes();
+    void Salvar(Cliente novoCliente);
+}
+```
+
+
 
 #### Vantages: ####
 
@@ -337,7 +402,7 @@ Olhando para as vantagens descritas abaixo, nota-se que o DIP é, por assim dize
 
 #### Dica: ####
 
-Se um método recebe como parâmetro um objeto concreto ou dentro de uma classe é necessário instanciar (inicializar um objeto) é um forte indicador de que o DIP está quebrado em sua aplicação.  
+Se um método recebe como parâmetro um objeto concreto ou dentro de uma classe é necessário instanciar* é um forte indicador de que o DIP está quebrado em sua aplicação. Outro indiciativo é o uso de classes estáticas.
 
 
 ## Links Úteis / Referências ##
@@ -360,7 +425,7 @@ André Celestino - DIP - https://www.andrecelestino.com/solid-dependency-inversi
 * __Entidade__ - classes, módulos, funções, componentes, bibliotecas ou qualquer outra unidade sujeita a alterações no software.
 * __Glossário__ - dicionário de palavras de sentido obscuro ou pouco conhecido; elucidário.  
 * __Implementação__ - códificação que transcreve em linguagem de programação a regra de negócio ou cálculo que se espera obter.
-* __Interface__ - determina um contrato ou os métodos que se deve implementar quando a mesma (interface) é herdada, ou seja, é uma forma de _template_ ou identidiade.
+* __Interface__ - determina um contrato ou os métodos que se deve implementar quando a mesma (interface) é herdada, ou seja, é uma forma de _template_ ou identidiade.  * __Instanciar__ - iniciliar um objeto, em C# acontece com a palavra reservada _New_.
 * __Princípio__ - modelo, base. Contrário de lei não é obrigatório. Pode-se dizer que trata-se de boas práticas.
 
 
