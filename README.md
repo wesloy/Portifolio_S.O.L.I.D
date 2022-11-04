@@ -85,7 +85,7 @@ Se houver dificuldade para nomear uma entidade, com um nome **totalmente descrit
 
 > O ***OCP*** dita que uma entidade está aberta para extensão e fechada para modificação.
 
-De modo simples, a entidade está ***fechada*** para ser alterada. Muitas vezes, alguns programadores se vêem motivados a **modificar** uma entidade e colocar um "_if_" para resolver uma nova situação nova que surja. Justificando que é apenas uma condição, mas esquecendo que qualquer que seja a outra entidade que possa herdar desta também será afetada e ainda mais, não levando em conta que em futuro breve ou não outras condicionais poderão surgir, fazendo com que o código fique poluído e difícil de ser entendido e dada a devida manutenção.
+De modo simples, a entidade está ***fechada*** para ser alterada. Muitas vezes, alguns programadores se vêem motivados a **modificar** uma entidade e colocar um "_if_" para resolver uma nova situação nova que surja. Justificando que é apenas uma condição, mas esquecendo que qualquer que seja a outra entidade que possa herdar desta também será afetada e ainda mais, não levando em conta que em futuro breve ou não, outras condicionais poderão surgir, fazendo com que o código fique poluído e difícil de ser entendido e dada a devida manutenção.
 
 E ela está **aberta** para ser extendida, quando outras entidades podem usá-la por herança e adicionar novas funcionalidades. 
 
@@ -412,6 +412,7 @@ Código Fonte TV - SOLID - https://www.youtube.com/watch?v=mkx0CdWiPRA
 Igor Luna - SOLID C# - https://github.com/igorluna/solid-workshop  
 Macoratti - SRP - https://www.macoratti.net/08/06/net_srp1.htm  
 André Celestino - OCP - https://www.andrecelestino.com/solid-open-closed-principle-ocp/  
+Lambda3 - OCP - https://www.lambda3.com.br/2022/07/principios-solid-boas-praticas-de-programacao-com-c-parte-2-ocp-open-closed-principle/  
 André Celestino - LSP - https://www.andrecelestino.com/solid-liskov-substitution-principle-lsp/  
 Medium NetCoders - LSP - https://medium.com/netcoders/aplicando-solid-com-c-lsp-liskov-substitution-principle-2a5d23753506  
 André Celestino - DIP - https://www.andrecelestino.com/solid-dependency-inversion-principle-dip/  
