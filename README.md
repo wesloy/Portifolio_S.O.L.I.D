@@ -133,7 +133,7 @@ Se o código possui _"Ifs"_ com a intenção de validar todas as variáveis exte
 ## Liskov Substitution Principle ::: Princípio de Substituíção de Liskov ##
 > **LSP** prega que uma entidade base poderá ser substituída por uma entidade derivada, sem prejuízo para o software e que as entidades derivadas nunca devem infligir as definições/comportamentos da entidade base. 
 
-O LSP, tem foco nas abstrações e para que seu princípio seja obedecido, refatora-se a abstração base para um nível que realmente possa atender de forma genérica, sem obrigar que as entidades derivadas façam testes lógicos ("_Ifs_") para evitar exceções. Em outras palavras, nos fornece uma forma de saber se uma herança está implementada de forma correta ou não. Através do uso de polimorfismo, ao usar um método ou propriedade, seja da classe base ou da classe especialista, o resultado sempre deve estar correto sem qualquer alteração.
+O LSP, tem foco nas abstrações e para que seu princípio seja obedecido, refatora-se a abstração base para um nível que realmente possa atender de forma genérica, sem obrigar que as entidades derivadas façam testes lógicos ("_Ifs_") para evitar exceções. Em outras palavras, nos fornece uma forma de saber se uma herança está implementada em um nível correto ou não. Através do uso de polimorfismo, ao usar um método ou propriedade, seja da classe base ou da classe especialista, o resultado sempre deve estar correto sem qualquer alteração.
 
 #### Exemplo: ####
 
