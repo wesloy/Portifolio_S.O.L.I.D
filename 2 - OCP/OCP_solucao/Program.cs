@@ -3,6 +3,7 @@
 
 using Contabilidade;
 
+
 var horasExtrasGerente = new HorasExtrasGerente();
 var horasExtrasCoordenador = new HorasExtrasCoordenador();
 var horasExtrasAnalista = new HorasExtrasAnalista();

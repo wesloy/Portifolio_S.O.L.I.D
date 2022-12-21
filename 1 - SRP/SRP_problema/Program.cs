@@ -2,6 +2,7 @@
 
 Funcionario func = new Funcionario();
 
+
 Console.WriteLine("Funcionário trabalhando...");
 func.AnotarPedido();
 func.PrepararAlimentos();

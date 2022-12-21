@@ -4,6 +4,7 @@ Garcom garcom = new Garcom();
 Cozinheiro cozinheiro = new Cozinheiro();
 Caixa caixa = new Caixa();
 
+
 Console.WriteLine("Funcionários trabalhando...");
 
 garcom.AnotarPedido();
