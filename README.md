@@ -15,7 +15,7 @@ Esse termo é um acrônimo:
 * **O**pen/Closed Principle (Princípio Aberto e Fechado)
 * **L**iskov Substitution Principle (Princípio de Substituíção de Liskov)
 * **I**nterface Segregation Principle (Princípio de Segregação de Interface*)
-* **D**ependency Inversion Principle (Princípio da Inversão de Depdência)
+* **D**ependency Inversion Principle (Princípio da Inversão de Dependência)
 
 SOLID **não é um Desgner Patterns** é na verdade um conjunto de princípios* que tem como objetivo a construção de sistemas mais compreensivos, flexíveis e sustentáveis.  
 
@@ -133,7 +133,7 @@ Se o código possui _"Ifs"_ com a intenção de validar todas as variáveis exte
 ## Liskov Substitution Principle ::: Princípio de Substituíção de Liskov ##
 > **LSP** prega que uma entidade base poderá ser substituída por uma entidade derivada, sem prejuízo para o software e que as entidades derivadas nunca devem infligir as definições/comportamentos da entidade base. 
 
-O LSP, tem foco nas abstrações e para que seu princípio seja obedecido, refatora-se a abstração base para um nível que realmente possa atender de forma genérica, sem obrigar que as entidades derivadas façam testes lógicos ("_Ifs_") para evitar exceções. Em outras palavras, nos fornece uma forma de saber se uma herança está implementada de forma correta ou não. Através do uso de polimorfismo, ao usar um método ou propriedade, seja da classe base ou da classe especialista, o resultado sempre deve estar correto sem qualquer alteração.
+O LSP, tem foco nas abstrações e para que seu princípio seja obedecido, refatora-se a abstração base para um nível que realmente possa atender de forma genérica, sem obrigar que as entidades derivadas façam testes lógicos ("_Ifs_") para evitar exceções. Em outras palavras, nos fornece uma forma de saber se uma herança está implementada em um nível correto ou não. Através do uso de polimorfismo, ao usar um método ou propriedade, seja da classe base ou da classe especialista, o resultado sempre deve estar correto sem qualquer alteração.
 
 #### Exemplo: ####
 
@@ -319,7 +319,7 @@ Agora chegamos ao nível correto de segregação das interfaces e desobrigamos a
 Se um cliente precisar "passar por alto" algum método da interface e/ou a atualização da interface* provoque este mesmo efeito em outras classes que já estão implementadas é sinal de que o ISP está sendo infligido.  
 **Observação:** alterar uma interface, para incluir um novo método é extremamente perigoso, visto que pode quebrar o software de diversas formas diferentes. Isto apenas se deve ser feito no caso específico de que todas as implementações necessitem deste novo método.
 
-## Dependency Inversion Principle ::: Princípio da Inversão de Depdência ##
+## Dependency Inversion Principle ::: Princípio da Inversão de Dependência ##
 > **DIP** determina que módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações e abstrações não devem depender de detalhes. Detalhes devem depender de abstrações.  
 
 
@@ -357,25 +357,25 @@ Agora veja com DIP usado corretamente:
 public class Cadastro 
 {
     IDateTimeProvider _dateTimeProvider;
-    IClientesDataBase _cienteDataBase;
+    IClientesDataBase _clienteDataBase;
 
     public Cadastro(
         IDateTimeProvider dateTimeProvider,
         IClientesDataBase ClienteDataBase)
     {
         _dateTimeProvider = dateTimeProvider;
-        _cienteDataBase = ClienteDataBase;
+        _clienteDataBase = ClienteDataBase;
     }
 
     public List<Cliente> ObterClientes()
     {
-        return _cienteDataBase.ObtemClientes();
+        return _clienteDataBase.ObtemClientes();
     }
 
     public void AdicionarCliente(Cliente novoCliente)
     {
         novoCliente.DataCadastro = _dateTimeProvider.Now;
-        _cienteDataBase.Salvar(novoCliente);
+        _clienteDataBase.Salvar(novoCliente);
     }
 }
 
