@@ -1,6 +1,6 @@
 ﻿using Contabilidade;
 
-var horasExtras = new HorasExtras(); // Esta declaração quebra o SOLID, mas isso é para outro momento
+var horasExtras = new HorasExtras();
 
 horasExtras.CalculaHorasExtras(TiposCargosEnum.Gerente, 10);
 horasExtras.CalculaHorasExtras(TiposCargosEnum.Coordenador, 10);

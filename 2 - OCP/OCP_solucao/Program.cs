@@ -3,9 +3,9 @@
 
 using Contabilidade;
 
-var horasExtrasGerente = new HorasExtrasGerente(); // Esta declaração quebra o SOLID, mas isso é para outro momento
-var horasExtrasCoordenador = new HorasExtrasCoordenador(); // Esta declaração quebra o SOLID, mas isso é para outro momento
-var horasExtrasAnalista = new HorasExtrasAnalista(); // Esta declaração quebra o SOLID, mas isso é para outro momento
+var horasExtrasGerente = new HorasExtrasGerente();
+var horasExtrasCoordenador = new HorasExtrasCoordenador();
+var horasExtrasAnalista = new HorasExtrasAnalista();
 
 
 horasExtrasGerente.CalcularHorasExtras(10);

@@ -1,8 +1,8 @@
 ﻿using Funcionarios;
 
-Garcom garcom = new Garcom(); // Esta declaração quebra o SOLID, mas isso é para outro momento
-Cozinheiro cozinheiro = new Cozinheiro(); // Esta declaração quebra o SOLID, mas isso é para outro momento
-Caixa caixa = new Caixa(); // Esta declaração quebra o SOLID, mas isso é para outro momento
+Garcom garcom = new Garcom();
+Cozinheiro cozinheiro = new Cozinheiro();
+Caixa caixa = new Caixa();
 
 Console.WriteLine("Funcionários trabalhando...");
 

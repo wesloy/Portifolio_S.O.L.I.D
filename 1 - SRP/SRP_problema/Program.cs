@@ -1,6 +1,6 @@
 ﻿using Funcionarios;
 
-Funcionario func = new Funcionario(); // Esta declaração quebra o SOLID, mas isso é para outro momento
+Funcionario func = new Funcionario();
 
 Console.WriteLine("Funcionário trabalhando...");
 func.AnotarPedido();
