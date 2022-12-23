@@ -1,6 +1,5 @@
-
-// Herença multipla para cobrir as funções comuns e específicas
-public class Gaviao : IAve, IAveVoadora
+// IAveVoadora é específica e ao mesmo tempo tem os atributos comuns a todoas as Aves
+public class Gaviao : IAveVoadora
 {
     private readonly string animal = "Gavião ";
 
