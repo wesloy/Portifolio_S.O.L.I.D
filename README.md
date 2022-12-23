@@ -416,7 +416,8 @@ Lambda3 - OCP - https://www.lambda3.com.br/2022/07/principios-solid-boas-pratica
 André Celestino - LSP - https://www.andrecelestino.com/solid-liskov-substitution-principle-lsp/  
 Medium NetCoders - LSP - https://medium.com/netcoders/aplicando-solid-com-c-lsp-liskov-substitution-principle-2a5d23753506  
 André Celestino - DIP - https://www.andrecelestino.com/solid-dependency-inversion-principle-dip/  
-Lambda3 - DIP - https://www.lambda3.com.br/2022/07/principios-solid-boas-praticas-de-programacao-com-c-parte-5-dip-dependency-inversion-principle/
+Lambda3 - DIP - https://www.lambda3.com.br/2022/07/principios-solid-boas-praticas-de-programacao-com-c-parte-5-dip-dependency-inversion-principle/  
+BlogDoFT - DIP - https://www.blogdoft.com.br/2020/02/03/solid-de-verdade-dependency-inversion-principle-dip/  
 
 
 
