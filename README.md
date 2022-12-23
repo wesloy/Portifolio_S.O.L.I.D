@@ -409,6 +409,7 @@ Se um método recebe como parâmetro um objeto concreto ou dentro de uma classe 
 
 Filipe Deschamps - SOLID - https://www.youtube.com/watch?v=6SfrO3D4dHM  
 Código Fonte TV - SOLID - https://www.youtube.com/watch?v=mkx0CdWiPRA  
+Casa do Código - SOLID - https://www.youtube.com/watch?v=SOo-F4Hdp0E  
 Igor Luna - SOLID C# - https://github.com/igorluna/solid-workshop  
 Macoratti - SRP - https://www.macoratti.net/08/06/net_srp1.htm  
 André Celestino - OCP - https://www.andrecelestino.com/solid-open-closed-principle-ocp/  
