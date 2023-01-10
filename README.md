@@ -1,4 +1,4 @@
-# S.O.L.I.D
+# S.O.L.I.D.
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/wesloy/Portifolio_S.O.L.I.D/blob/main/license) 
 
 ## Sobre o projeto
